@@ -81,6 +81,9 @@ delete packageJson.scripts.prepublishOnly;
 // Write ./package.json
 await writeFile('./package/package.json', JSON.stringify(packageJson, null, 2));
 
+// Copy ./README.md
+await writeFile('./package/README.md', await readFile('./README.md', 'utf-8'));
+
 /**
  * @param {string} path
  */
