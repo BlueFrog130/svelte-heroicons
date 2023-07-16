@@ -75,6 +75,9 @@ for (const [key, files] of Object.entries(directories)) {
 	}
 }
 
+// Remove prepublishOnly script
+delete packageJson.scripts.prepublishOnly;
+
 // Write ./package.json
 await writeFile('./package/package.json', JSON.stringify(packageJson, null, 2));
 
